@@ -1,18 +1,20 @@
 package com.gmail.arkgaranin.tests;
 
+import com.github.javafaker.Faker;
 import com.gmail.arkgaranin.pages.RegistrationPage;
 import org.junit.jupiter.api.Test;
 
 public class StudentRegistrationFormTests extends BaseTest {
 
   RegistrationPage registrationPage = new RegistrationPage();
+  Faker faker = new Faker();
 
-  String firstName = "Arkadiy",
-      lastName = "Garanin",
-      email = "yiyopog631@carpetd.com",
+  String firstName = faker.name().firstName(),
+      lastName = faker.name().lastName(),
+      email = faker.internet().emailAddress(),
       gender = "Male",
-      mobileNumber = "9771234567",
-      dayOfBirth = "26",
+      mobileNumber = faker.phoneNumber().subscriberNumber(10),
+      dayOfBirth = String.valueOf(faker.number().numberBetween(10, 30)),
       monthOfBirth = "April",
       yearOfBirth = "1990",
       subject1 = "English",
@@ -22,7 +24,7 @@ public class StudentRegistrationFormTests extends BaseTest {
       hobbyResult1 = "Sports",
       hobbyResult2 = "Music",
       picture = "Bart.png",
-      currentAddress = "MO Odintsovo",
+      currentAddress = faker.address().fullAddress(),
       state = "Haryana",
       city = "Karnal";
 
