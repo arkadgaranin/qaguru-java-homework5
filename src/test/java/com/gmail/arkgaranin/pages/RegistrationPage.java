@@ -78,7 +78,7 @@ public class RegistrationPage {
   }
 
   public RegistrationPage uploadPicture() {
-    selectPictureBtn.uploadFile(new File("src/test/resources/Bart.png"));
+    selectPictureBtn.uploadFile(new File("src/test/resources/image.png"));
     return this;
   }
 

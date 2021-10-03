@@ -23,7 +23,7 @@ public class StudentRegistrationFormTests extends BaseTest {
       hobbyToSelect2 = "3",
       hobbyResult1 = "Sports",
       hobbyResult2 = "Music",
-      picture = "Bart.png",
+      picture = "image.png",
       currentAddress = faker.address().fullAddress(),
       state = "Haryana",
       city = "Karnal";
