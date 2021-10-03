@@ -4,6 +4,9 @@ import com.github.javafaker.Faker;
 import com.gmail.arkgaranin.pages.RegistrationPage;
 import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class StudentRegistrationFormTests extends BaseTest {
 
   RegistrationPage registrationPage = new RegistrationPage();
@@ -28,6 +31,19 @@ public class StudentRegistrationFormTests extends BaseTest {
       state = "Haryana",
       city = "Karnal";
 
+  Map<String, String> expectedData = new HashMap<>() {{
+    put("Student Name", firstName + " " + lastName);
+    put("Student Email", email);
+    put("Gender", gender);
+    put("Mobile", mobileNumber);
+    put("Date of Birth", dayOfBirth + " " + monthOfBirth + "," + yearOfBirth);
+    put("Subjects", subject1 + ", " + subject2);
+    put("Hobbies", hobbyResult1 + ", " + hobbyResult2);
+    put("Picture", picture);
+    put("Address", currentAddress);
+    put("State and City", state + " " + city);
+  }};
+
   @Test
   void fillRegistrationFormTest() {
     // Открытие стр-цы формы регистрации
@@ -50,20 +66,8 @@ public class StudentRegistrationFormTests extends BaseTest {
     // Submit Registration Form
     registrationPage.submitForm();
 
-    // Проверка появления попапа регистрации и заголовка в нем
+    // Проверка появления попапа регистрации и данных в нем
     registrationPage.checkResultsPopupTitle();
-
-    // Проверка регистрационных данных в попапе
-    registrationPage
-        .checkResultsPopupValue("Student Name", firstName + " " + lastName)
-        .checkResultsPopupValue("Student Email", email)
-        .checkResultsPopupValue("Gender", gender)
-        .checkResultsPopupValue("Mobile", mobileNumber)
-        .checkResultsPopupValue("Date of Birth", dayOfBirth)
-        .checkResultsPopupValue("Subjects", subject1 + ", " + subject2)
-        .checkResultsPopupValue("Hobbies", hobbyResult1 + ", " + hobbyResult2)
-        .checkResultsPopupValue("Picture", picture)
-        .checkResultsPopupValue("Address", currentAddress)
-        .checkResultsPopupValue("State and City", state + " " + city);
+    registrationPage.checkResultsPopupValue(expectedData);
   }
 }
