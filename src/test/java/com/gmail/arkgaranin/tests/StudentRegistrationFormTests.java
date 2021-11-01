@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-public class StudentRegistrationFormTests extends BaseTest {
+public class StudentRegistrationFormTests extends TestBase {
 
   RegistrationPage registrationPage = new RegistrationPage();
   Faker faker = new Faker();
