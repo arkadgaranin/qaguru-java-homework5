@@ -3,7 +3,7 @@ package com.gmail.arkgaranin.tests;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 
-public class BaseTest {
+public class TestBase {
 
   @BeforeAll
   static void setup() {
