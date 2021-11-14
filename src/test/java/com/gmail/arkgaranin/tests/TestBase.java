@@ -7,7 +7,7 @@ public class TestBase {
 
   @BeforeAll
   static void setup() {
-    Configuration.startMaximized = true;
+    Configuration.browserSize = "1280x720";
     Configuration.browser = "chrome";
     Configuration.baseUrl = "https://demoqa.com";
   }
