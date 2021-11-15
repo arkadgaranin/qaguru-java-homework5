@@ -69,14 +69,15 @@ public class RegistrationPage {
     return this;
   }
 
-  public RegistrationPage selectSubjects(String subj1, String subj2) {
+  public RegistrationPage selectSubjects(String subj1, String subj2, String subj3) {
     subjectsDropdown.setValue(subj1).pressEnter();
     subjectsDropdown.setValue(subj2).pressEnter();
+    subjectsDropdown.setValue(subj3).pressEnter();
     return this;
   }
 
   public RegistrationPage selectHobbies(String hobbyNumber) {
-    $(format("[for=hobbies-checkbox-%s]", hobbyNumber)).click();
+    $(format("[for=hobbies-checkbox-%s]", hobbyNumber)).scrollTo().click();
     return this;
   }
 

@@ -23,6 +23,7 @@ public class StudentRegistrationFormTests extends TestBase {
             yearOfBirth = "1990",
             subject1 = "English",
             subject2 = "Computer Science",
+            subject3 = "History",
             hobbyToSelect1 = "1",
             hobbyToSelect2 = "3",
             hobbyResult1 = "Sports",
@@ -38,7 +39,7 @@ public class StudentRegistrationFormTests extends TestBase {
         put("Gender", gender);
         put("Mobile", mobileNumber);
         put("Date of Birth", dayOfBirth + " " + monthOfBirth + "," + yearOfBirth);
-        put("Subjects", subject1 + ", " + subject2);
+        put("Subjects", subject1 + ", " + subject2 + ", " + subject3);
         put("Hobbies", hobbyResult1 + ", " + hobbyResult2);
         put("Picture", picture);
         put("Address", currentAddress);
@@ -57,7 +58,7 @@ public class StudentRegistrationFormTests extends TestBase {
                 .selectGender(gender)
                 .typeMobileNumber(mobileNumber)
                 .setDateOfBirth(dayOfBirth, monthOfBirth, yearOfBirth)
-                .selectSubjects(subject1, subject2)
+                .selectSubjects(subject1, subject2, subject3)
                 .selectHobbies(hobbyToSelect1)
                 .selectHobbies(hobbyToSelect2)
                 .uploadPicture()
